@@ -1,0 +1,38 @@
+name: List a CoD2x mod
+description: Request a listing for your own public mod repository.
+title: "List a mod"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        GitHub records your account as the issue author. Use public project details here.
+  - type: input
+    id: mod
+    attributes:
+      label: Mod ID
+      description: Match the stable ID in mod.json.
+      placeholder: cod2x-claude2
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Public mod repository
+      description: Share your GitHub repo with a published release containing mod.zip and mod.json.
+      placeholder: https://github.com/owner/mod-repo
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: Public author credit
+      description: The name people will see in the launcher.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: About the mod
+      description: Explain what it adds and your role in the project.
+    validations:
+      required: true
