@@ -1,3 +1,8 @@
 {
-  "mods": []
+  "mods": [
+    {
+      "id": "publisher-fixture",
+      "repository": "laspencer91/cod2x-125hz-publisher-test"
+    }
+  ]
 }
