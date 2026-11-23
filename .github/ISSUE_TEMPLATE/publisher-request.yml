@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        GitHub records your account as the issue author. Use public project details here.
+        Submit this form after publishing your release. GitHub will prepare a catalog pull request and post the review link here.
   - type: input
     id: mod
     attributes:

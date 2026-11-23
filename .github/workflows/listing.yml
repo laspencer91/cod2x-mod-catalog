@@ -1,0 +1,25 @@
+name: Prepare catalog listing
+on:
+  issues:
+    types: [opened, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: catalog-listing-${{ github.event.issue.number }}
+
+jobs:
+  listing:
+    if: contains(github.event.issue.body, '### Mod ID')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - run: python3 .github/listing.py
+        env:
+          GH_TOKEN: ${{ github.token }}
